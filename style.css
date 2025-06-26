@@ -1,0 +1,80 @@
+body {
+    font-family: 'Smythe', sans-serif;
+    font-size: 20px;
+    margin: 0;
+}
+
+p, h2 {
+    margin: 0;
+}
+/* header */
+header {
+    background-image: url("./images/bg_img.png");
+    background-size: cover;
+    color: #FFFFFF;
+    padding: 46px 0px 70px 46px ;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 39px;
+}
+
+/* Food Options */
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 650px;
+}
+
+.option-details {
+    display: flex;
+}
+
+.big-emoji {
+    font-size: 50px;
+}
+
+.order-option {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 50px;
+    border-bottom: 1px solid grey;
+}
+
+.option-info {
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.option-info h2 {
+    font-size: 26px;
+}
+
+.item-details{
+    margin: 8px 0 16px 0 ;
+}
+
+.add-cart {
+    cursor: pointer;
+    padding: 12px 20px;
+    border-radius: 100px;
+    border: 1px solid #DEDEDE;
+    font-size: 26px;
+}
+
+.btn-primary {
+    font-size: 20px;
+    background-color: #16DB99;
+    color: #FFFFFF;
+    border-radius: 3px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    padding: 18px 0 18px 0;
+}
