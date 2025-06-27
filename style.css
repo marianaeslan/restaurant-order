@@ -79,6 +79,7 @@ header h1 {
 
 .your-order{
     margin: 60px 0;
+    text-align: center;
 }
 
 .your-order h2 {
@@ -156,4 +157,13 @@ header h1 {
 
 .btn-primary:hover {
     background-color: #0e9166;
+}
+
+.def-message {
+    color: #8B8B8B;
+    margin-bottom: 20px;
+}
+
+.hide {
+    display: none;
 }

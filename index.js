@@ -20,8 +20,22 @@ document.addEventListener('click', function(e){
             })
         }
         
-        renderFood()
+        
+    } else if (e.target.dataset.remove){
+        const foodId = parseInt(e.target.dataset.remove)
+        const foodItem = menuArray.filter((food) => {
+            return food.id === foodId
+        })[0]
+
+        const existingCartItem = cart.find(item => item.foodItem.id === foodId)
+        if (existingCartItem){
+            existingCartItem.quantity--
+            if (existingCartItem.quantity === 0) {
+                cart = cart.filter(item => item.foodItem.id !== foodId)
+            }
+        } 
     }
+    renderFood()
 })
 
 function calcTotalPrice(cartArr) {
@@ -42,7 +56,7 @@ function getCart(cartArr){
         <div class="order-item">
             <div class="order-title">
                 <p class="item-name">${item.foodItem.name}</p>
-                <a class="remove-item">remove</a>
+                <a class="remove-item" data-remove=${item.foodItem.id}>remove</a>
             </div>
             <div class="order-specs">
                 <p class="item-price quant-order">x ${item.quantity}</p>
