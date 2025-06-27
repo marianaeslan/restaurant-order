@@ -58,6 +58,7 @@ header h1 {
 
 .item-details{
     margin: 8px 0 16px 0 ;
+    color: #8B8B8B;
 }
 
 .add-cart {
@@ -66,6 +67,79 @@ header h1 {
     border-radius: 100px;
     border: 1px solid #DEDEDE;
     font-size: 26px;
+    transition: all 0.3s ease;
+}
+
+.add-cart:hover {
+    background-color: #d3d2d2;
+}
+
+
+/* Total Order */
+
+.your-order{
+    margin: 60px 0;
+}
+
+.your-order h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.order-wrap {
+    margin-bottom: 40px;
+}
+
+.order-item, .order-title {
+    display: flex;
+    align-items: center;
+}
+
+.order-item {
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.order-title {
+    justify-content: start;
+}
+
+.order-specs {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.quant-order {
+    margin-right: 12px;
+    color: #a7a5a5;
+
+}
+
+.item-name {
+    margin-right: 12px;
+    font-size: 28px; 
+}
+
+.total-order{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid black;
+    padding-top: 20px;
+}
+
+.remove-item {
+    color: #BBBBBB;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.remove-item:hover {
+    text-decoration: underline;
+    color: #8B8B8B;
 }
 
 .btn-primary {
@@ -77,4 +151,9 @@ header h1 {
     width: 100%;
     cursor: pointer;
     padding: 18px 0 18px 0;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0e9166;
 }
