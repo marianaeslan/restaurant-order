@@ -2,14 +2,37 @@ import { menuArray } from "./data.js"
 
 let cart = []
 
+function confirmOrder() {
+    const formBtn = document.getElementById('form-btn')
+    const userName = document.getElementById('input-name')
+    formBtn.addEventListener('click', function(){
+        // w.i.p
+    })
+}
 
-document.addEventListener('click', function(e){
+function openModal() {
+    const modalPayment = document.getElementById('payment-modal')
+    const orderBtn = document.getElementById('order-btn')
+    orderBtn.addEventListener('click', function(){
+        modalPayment.style.display = "flex"
+    })
+}
+
+function closeModal() {
+    const modalPayment = document.getElementById('payment-modal')
+    const closeModalBtn = document.getElementById('close-modal-btn')
+    closeModalBtn.addEventListener('click', function(){
+        modalPayment.style.display = "none"
+    })
+}
+
+document.addEventListener('click', function(e) {
     if (e.target.dataset.add){
         const foodId = parseInt(e.target.dataset.add)
         const foodItem = menuArray.filter((food) => {
             return food.id === foodId
         })[0]
-
+        document.getElementById('your-order').classList.remove('hide')
         const existingCartItem = cart.find(item => item.foodItem.id === foodId)
         if (existingCartItem){
             existingCartItem.quantity++
@@ -46,23 +69,25 @@ function calcTotalPrice(cartArr) {
     return totalPrice
 }
 
-function getCart(cartArr){
+function getCart(cartArr) {
     let cartHtml = ''
     let price = document.getElementById("total-price")
     price = calcTotalPrice(cartArr)
     
     cartArr.forEach((item) => {
         cartHtml += `
-        <div class="order-item">
-            <div class="order-title">
-                <p class="item-name">${item.foodItem.name}</p>
-                <a class="remove-item" data-remove=${item.foodItem.id}>remove</a>
+        <div class="order-wrap" id="order-wrap">
+            <div class="order-item">
+                <div class="order-title">
+                    <p class="item-name">${item.foodItem.name}</p>
+                    <a class="remove-item" data-remove=${item.foodItem.id}>remove</a>
+                </div>
+                <div class="order-specs">
+                    <p class="item-price quant-order">x ${item.quantity}</p>
+                    <p class="item-price">$ ${item.foodItem.price}</p>
+                </div>
             </div>
-            <div class="order-specs">
-                <p class="item-price quant-order">x ${item.quantity}</p>
-                <p class="item-price">$ ${item.foodItem.price}</p>
-            </div>
-        </div>
+        
         `
     })
     cartHtml += `
@@ -102,3 +127,5 @@ function renderFood() {
 }
 
 renderFood()
+openModal()
+closeModal()

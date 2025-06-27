@@ -25,7 +25,7 @@
                  
             </div>
             
-            <div class="your-order">
+            <div class="your-order hide" id="your-order">
                 <!-- your cart here -->
                 <h2 class="item-name">Your order</h2>
                 <div class="order-wrap" id="order-wrap">
@@ -36,11 +36,21 @@
                         
                     </div> 
                 </div>
-                <button class="btn-primary">Complete order</button>
+                <button class="btn-primary" id="order-btn">Complete order</button>
 
             </div>
         </div>
     </main>
+        <div class="payment-modal" id="payment-modal">
+            <button class="close-modal-btn" id="close-modal-btn">x</button>
+            <form action="">
+                <h2 class="form-title">Enter card details</h2>
+                <input type="text" placeholder="Enter your name" id="input-name" required>
+                <input type="tel" placeholder="Enter card number" minlength="16" maxlength="16" pattern="\d*" required>
+                <input type="number" placeholder="Enter CVV" minlength="3" required>
+                <button class="btn-primary form-btn" type="submit" id="form-btn" disabled>Pay</button>
+            </form>
+        </div>
     <script src="index.js" type="module"></script>
 </body>
 

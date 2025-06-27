@@ -167,3 +167,63 @@ header h1 {
 .hide {
     display: none;
 }
+
+.payment-modal {
+    box-shadow: 0px 0px 100px #303030eb;
+    background-color: white;
+    display: none;
+    position: fixed;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 80px;
+    align-items: center;
+    justify-content: center;
+    width: 524px;
+    height: 543px;
+    padding: 24px;
+}
+
+.close-modal-btn {
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    border: none;
+    background-color: white;
+    color: #757575;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-modal-btn:hover {
+    color: rgb(221, 1, 1);
+}
+
+form {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.form-title {
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input {
+    width: 475px;
+    height: 64px;
+    border: 1px solid #757575;
+    margin: 8px 0;
+    border-radius: 4px;
+    padding: 0px 14px;
+}
+
+.form-btn {
+    margin-top: 40px;
+}
