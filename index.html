@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">    
     <!-- Google Fonts -->
@@ -11,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
     
 
-    <title>restaurant order</title>
+    <title>Restaurant Order</title>
 </head>
 <body>
     <header>
@@ -39,16 +41,19 @@
                 <button class="btn-primary" id="order-btn">Complete order</button>
 
             </div>
+            <div class="order-confirmation hide" id="order-confirmation">
+                <p class="c_message" id="c-message"></p>
+            </div>
         </div>
     </main>
         <div class="payment-modal" id="payment-modal">
             <button class="close-modal-btn" id="close-modal-btn">x</button>
-            <form action="">
+            <form id="payment-form">
                 <h2 class="form-title">Enter card details</h2>
                 <input type="text" placeholder="Enter your name" id="input-name" required>
-                <input type="tel" placeholder="Enter card number" minlength="16" maxlength="16" pattern="\d*" required>
-                <input type="number" placeholder="Enter CVV" minlength="3" required>
-                <button class="btn-primary form-btn" type="submit" id="form-btn" disabled>Pay</button>
+                <input type="tel" placeholder="Enter card number" minlength="16" maxlength="16" pattern="[0-9]{16}" inputmode="numeric" required>
+                <input type="tel" placeholder="Enter CVV" maxlength="3" inputmode="numeric" required>
+                <button class="btn-primary form-btn" type="submit">Pay</button>
             </form>
         </div>
     <script src="index.js" type="module"></script>

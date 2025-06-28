@@ -1,14 +1,17 @@
 import { menuArray } from "./data.js"
 
 let cart = []
+const paymentForm = document.getElementById('payment-form')
+const userName = document.getElementById('input-name')
 
-function confirmOrder() {
-    const formBtn = document.getElementById('form-btn')
-    const userName = document.getElementById('input-name')
-    formBtn.addEventListener('click', function(){
-        // w.i.p
-    })
-}
+paymentForm.addEventListener('submit', function(e){
+    e.preventDefault()
+    const modalPayment = document.getElementById('payment-modal')
+    modalPayment.style.display = 'none'
+    document.getElementById('your-order').classList.add('hide')
+    document.getElementById('order-confirmation').classList.remove('hide')
+    document.getElementById('c-message').innerHTML = `<p>Thanks, ${userName.value}! Your order is on its way!</p>`
+})
 
 function openModal() {
     const modalPayment = document.getElementById('payment-modal')
@@ -41,9 +44,7 @@ document.addEventListener('click', function(e) {
                 foodItem: foodItem,
                 quantity: 1
             })
-        }
-        
-        
+        }  
     } else if (e.target.dataset.remove){
         const foodId = parseInt(e.target.dataset.remove)
         const foodItem = menuArray.filter((food) => {
